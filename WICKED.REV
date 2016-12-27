@@ -1,0 +1,41 @@
+Version 1.00beta, 11-04-97
+-------------------------------------------------------------------------------
+First version, only few effects supported, GUS clicks, works only when
+compiled with debug switches on.
+
+Version 1.05beta, 02-07-97
+-------------------------------------------------------------------------------
+Supported effects: set volume, set speed, vol slide, panning, sample offset
+(still buggy), jump to pattern, pattern break, fine portas, extended
+panning, fine volume slides. Works with C2Spd, not with pure Amiga periods.
+
+Version 1.09beta, 06-07-97
+-------------------------------------------------------------------------------
+Written from a scratch. Almost all PT effects supported, except for
+various waveforms (sine only), glissando, delay note and invert loop.
+Works with Amiga periods, supports extended octaves (0-4). Volume ramping
+added, GUS click reduced.
+
+Version 1.10beta, 08-07-97
+-------------------------------------------------------------------------------
+S3M support added. Still no handler for specific S3M effects, only loader
+and MOD player, which bases on C4Speed...
+
+Version 1.15beta, 09-07-97
+-------------------------------------------------------------------------------
+S3M & MOD loaders fixed. Player fixed also. Added support for some of S3M
+effects (volslides, portamentos, set tempo). New effect converter and new
+effect interpretator (in player).
+
+Version 1.16beta, 09-07-97
+-------------------------------------------------------------------------------
++ fine vibrato
++ retrig+volume slide
++ global volume
+Fixed bugs in S3M loader.
+
+Version 1.20beta, 18-07-97
+-------------------------------------------------------------------------------
++ only *really* necessary functions and variables are global now
++ changes in drivers^loaders structures, far more stable now
++ arpeggio fixed

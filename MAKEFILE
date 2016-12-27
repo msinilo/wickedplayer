@@ -1,0 +1,46 @@
+###############################################################
+### sum definitions                                         ###
+###############################################################
+
+TARGET =
+CC = wcc386
+CCOPTS = -w1 -bt=dos -d2 -5r -mf -oneatmiler
+CCOPTS = -w1 -bt=dos -5r -mf -oneatmiler
+CCOPTS = -w1 -bt=dos -5r -mf -fpi -fp5 -oneatxl+
+
+LINKER = wlink
+LOPTS = debug all
+LOPTS =
+
+ASM = tasm
+AOPTS = /ml /m2 /zd
+AOPTS = /ml /m2
+
+COMPRESS = pmwlite
+COMPRESS = @%null
+
+SYSTEM = pmodew
+
+
+
+###############################################################
+### ok, now let's go with files                             ###
+###############################################################
+T_FILES = $(TARGET).obj files.obj shutup.obj gus.obj modload.obj &
+          modplay.obj s3mload.obj loaders.obj
+O_FILES = $(TARGET) files shutup gus modload modplay s3mload loaders
+
+
+
+###############################################################
+### rite, it's compilin^linkin' time!                       ###
+###############################################################
+$(TARGET).exe: $(T_FILES) makefile
+               *$(LINKER) $(LOPTS) system $(SYSTEM) file {$(O_FILES)}
+               $(COMPRESS) $(TARGET).exe
+
+.c.obj
+               *$(CC) $(CCOPTS) $<
+
+.asm.obj
+               $(ASM) $(AOPTS) $<

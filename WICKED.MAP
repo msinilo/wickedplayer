@@ -1,0 +1,480 @@
+WATCOM Linker Version 10.0
+Copyright by WATCOM International Corp. 1985, 1994. All rights reserved.
+Created on:       97/09/05 00:43:47
+Executable Image: wicked.exe
+creating a PMODE/W executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:00000000        00003720
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE                          0001:00000000   00000010
+_TEXT                  CODE                          0001:00000010   0000aa56
+_NULL                  BEGDATA        DGROUP         0002:00000000   00000004
+_AFTERNULL             BEGDATA        DGROUP         0002:00000004   00000000
+CONST                  DATA           DGROUP         0002:00000004   00000b97
+CONST2                 DATA           DGROUP         0002:00000b9c   00000140
+_DATA                  DATA           DGROUP         0002:00000cdc   00000a4e
+TIB                    DATA           DGROUP         0002:0000172a   00000000
+TI                     DATA           DGROUP         0002:0000172a   00000000
+TIE                    DATA           DGROUP         0002:0000172a   00000000
+XIB                    DATA           DGROUP         0002:0000172a   00000000
+XI                     DATA           DGROUP         0002:0000172a   00000018
+XIE                    DATA           DGROUP         0002:00001742   00000000
+YIB                    DATA           DGROUP         0002:00001742   00000000
+YI                     DATA           DGROUP         0002:00001742   00000006
+YIE                    DATA           DGROUP         0002:00001748   00000000
+DATA                   DATA           DGROUP         0002:00001748   00000000
+_BSS                   BSS            DGROUP         0002:00001748   00000fcc
+STACK                  STACK          DGROUP         0002:00002720   00001000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: wicked.obj(C:\!PROJECT\WP200\wicked.c)
+0001:00000028+ Set80x50_
+0001:0000009c* W_SetCols_
+0001:000000a8+ SendData_
+0001:000000cc* ClearScreen_
+0001:00000104* SetColor_
+0001:00000148+ W_PutChar_
+0001:0000017c+ W_PutMsg_
+0001:000001e8* W_PutNMsg_
+0001:00000250* W_PutHdr_
+0001:000002d4* W_PutSmallBox_
+0001:000003b0+ W_PutBigBox_
+0001:000005e0+ ShowBar_
+0001:000006c4* Extension_
+0001:000006fc  main_
+0002:00001748+ _ScreenBuf
+0002:0000174c+ _FGColor
+0002:0000174d+ _BGColor
+Module: files.obj(D:\!PROJECT\FILES\files.c)
+0001:00001e58+ SafeOpenW_
+0001:00001ea4+ SafeOpenR_
+0001:00001ee4  SafeFOpen_
+0001:00001f18+ SafeRead_
+0001:00001f40+ SafeWrite_
+0001:00001f68  SafeFRead_
+0001:00001fa4+ SafeFWrite_
+0001:00001fe0* fsize_
+0001:00002018+ SafeSize_
+0001:00002040* SafeLoad_
+0001:00002080* SafeLoadS_
+0001:000020c8* SafeFLoad_
+0001:00002130* SafeFLoadS_
+0001:000021a0* SafeSave_
+0001:000021b8* SafeFSave_
+Module: shutup.obj(D:\!PROJECT\shutup.c)
+0001:000021f0  vmode3_
+0001:00002214+ dummyRt_
+0001:00002218  addShutUp_
+0001:000022b4* subShutUp_
+0001:00002304  shutUp_
+Module: gus.obj(D:\!PROJECT\WP\gus.c)
+0002:00001754  _UsedDrv
+0001:000024a0  GUSPeek_
+0001:000024f4  GUSPoke_
+0001:00002554  GUSDumpSample_
+0002:00000dec  _DrvGUS
+0002:0000175e  _GUSMixingSpeed
+Module: modload.obj(C:\!PROJECT\WP200\modload.c)
+0002:0000116e  _Fine2C4Spd
+0002:000011f0  _Load_MOD
+Module: modplay.obj(C:\!PROJECT\WP200\modplay.c)
+0002:00001c80  _Tracks
+0002:00002234  _BPM
+0001:0000450c+ MP_ModHandler_
+0001:00004768  MP_PlayMod_
+0001:00004884  MP_StopMod_
+0001:000048d4  MP_SetGlobalVol_
+0001:000048ec  MP_GetGlobalVol_
+0001:000048f4  MP_SetStereo_
+0001:000048fc  MP_GetClock_
+0001:00004904* MP_SetClock_
+0002:00002238  _Ord
+0002:0000223a  _Row
+0002:0000223c  _Speed
+Module: s3mload.obj(C:\!PROJECT\WP200\s3mload.c)
+0002:000012d4  _Load_S3M
+Module: loaders.obj(C:\!PROJECT\WP200\loaders.c)
+0002:000012f0+ _GUSPos
+0001:00005598  LDR_Search4Poland_
+0001:000057a4  LDR_LoadSample_
+0002:00002588  _UsedLdr
+0002:0000258c  _Mod
+Module: C:\WC\lib386\dos\clib3r.lib(int386)
+0001:000058ad  int386_
+Module: C:\WC\lib386\dos\clib3r.lib(set386)
+0001:000058d0  memset_
+Module: C:\WC\lib386\dos\clib3r.lib(outp)
+0001:000058e8  outp_
+Module: C:\WC\lib386\dos\clib3r.lib(strrchr)
+0001:000058f6  strrchr_
+Module: C:\WC\lib386\dos\clib3r.lib(printf)
+0001:00005910  printf_
+Module: C:\WC\lib386\dos\clib3r.lib(exit)
+0001:00005932+ __null_int23_exit_
+0001:00005933  exit_
+0001:0000594b+ _exit_
+0002:0000132c+ ___atexit
+0002:00001330+ ___int23_exit
+0002:00001334+ ___FPE_handler_exit
+Module: C:\WC\lib386\dos\clib3r.lib(nmalloc)
+0001:00005961  _nmalloc_
+0001:00005961  malloc_
+0002:00001338  ___nheapbeg
+0002:0000133c  ___MiniHeapRover
+0002:00001340  ___LargestSizeB4MiniHeapRover
+Module: C:\WC\lib386\dos\clib3r.lib(strupr)
+0001:00005a44  strupr_
+0001:00005a44* _strupr_
+Module: C:\WC\lib386\dos\clib3r.lib(sprintf)
+0001:00005a76  sprintf_
+Module: C:\WC\lib386\dos\clib3r.lib(inp)
+0001:00005aa6  inp_
+Module: C:\WC\lib386\dos\clib3r.lib(cstrt386)
+0001:00000003* ___begtext
+0002:00000000* __nullarea
+0002:0000172a* __start_TI
+0002:0000172a* __end_TI
+0002:00001344* __GDAptr
+0002:00001348* __D16Infoseg
+0002:0000134a* __x386_zero_base_selector
+0001:00005ab0  _cstart_
+0001:00005d3f  __exit_
+0001:00005d41  __do_exit_with_msg__
+0001:00005d7c  __GETDS
+Module: C:\WC\lib386\dos\clib3r.lib(argcv386)
+0002:0000134c  __argc
+0002:00001350  __argv
+Module: C:\WC\lib386\dos\clib3r.lib(umask)
+0001:00005d88  umask_
+Module: C:\WC\lib386\dos\clib3r.lib(open)
+0001:00005d9e  open_
+0001:00005dc2  sopen_
+0001:00005f87* __set_binary_
+Module: C:\WC\lib386\dos\clib3r.lib(errno)
+0001:00005fec  __get_errno_ptr_
+0001:00005ff2  __get_doserrno_ptr_
+0002:000026d0+ __doserrno
+0002:000026d4+ _errno
+Module: C:\WC\lib386\dos\clib3r.lib(strerror)
+0001:00005ff8  strerror_
+0002:00001354* _sys_nerr
+0002:00001358+ _sys_errlist
+Module: C:\WC\lib386\dos\clib3r.lib(fopen)
+0001:0000600f+ __open_flags_
+0001:0000618b+ _fsopen_
+0001:000061a6  fopen_
+0001:00006218* freopen_
+Module: C:\WC\lib386\dos\clib3r.lib(read)
+0001:0000623c  read_
+Module: C:\WC\lib386\dos\clib3r.lib(write)
+0001:0000634f  write_
+Module: C:\WC\lib386\dos\clib3r.lib(fread)
+0001:00006520  fread_
+Module: C:\WC\lib386\dos\clib3r.lib(ftell)
+0001:000066ea  ftell_
+Module: C:\WC\lib386\dos\clib3r.lib(fwrite)
+0001:0000671a  fwrite_
+Module: C:\WC\lib386\dos\clib3r.lib(fseek)
+0001:00006943  fseek_
+Module: C:\WC\lib386\dos\clib3r.lib(fstat)
+0001:00006a3f  fstat_
+0001:00006a3f* _fstat_
+Module: C:\WC\lib386\dos\clib3r.lib(close)
+0001:00006b2d  close_
+Module: C:\WC\lib386\dos\clib3r.lib(fclose)
+0001:00006b32  fclose_
+0001:00006b61  __shutdown_stream_
+0001:00006b82+ __MkTmpFile_
+0001:00006beb  __doclose_
+Module: C:\WC\lib386\dos\clib3r.lib(vprintf)
+0001:00006c74  vprintf_
+Module: C:\WC\lib386\dos\clib3r.lib(getenv)
+0001:00006c8b  getenv_
+Module: C:\WC\lib386\dos\clib3r.lib(sscanf)
+0001:00006d12+ vsscanf_
+0001:00006d39  sscanf_
+Module: C:\WC\lib386\dos\clib3r.lib(outpw)
+0001:00006d5a  outpw_
+Module: C:\WC\lib386\dos\clib3r.lib(inpw)
+0001:00006d65  inpw_
+Module: C:\WC\lib386\dos\clib3r.lib(strncpy)
+0001:00006d6e  strncpy_
+Module: C:\WC\lib386\dos\clib3r.lib(nfree)
+0001:00006d93  _nfree_
+0001:00006d93  free_
+Module: C:\WC\lib386\dos\clib3r.lib(chint386)
+0001:00006df2  _chain_intr_
+Module: C:\WC\lib386\dos\clib3r.lib(d_getvec)
+0001:00006e0b  _dos_getvect_
+Module: C:\WC\lib386\dos\clib3r.lib(d_setvec)
+0001:00006e3f  _dos_setvect_
+Module: C:\WC\lib386\dos\clib3r.lib(itoa)
+0001:00006e8f+ utoa_
+0001:00006ed9  itoa_
+0001:00006ed9* _itoa_
+Module: C:\WC\lib386\dos\clib3r.lib(__stos)
+0001:00006f00  __STOSB
+0001:00006f37* __STOSD
+Module: C:\WC\lib386\dos\clib3r.lib(memcmp)
+0001:00006fa3  memcmp_
+Module: C:\WC\lib386\dos\clib3r.lib(strlen)
+0001:00006fc1  strlen_
+Module: C:\WC\lib386\dos\clib3r.lib(segread)
+0001:00006fda  segread_
+Module: C:\WC\lib386\dos\clib3r.lib(intx386)
+0001:00007002  int386x_
+Module: C:\WC\lib386\dos\clib3r.lib(iob)
+0002:00001398  ___iob
+0002:000015a0* ___tmpfnext
+0002:000015a1  __fmode
+0002:000026d8  ___ClosedStreams
+Module: C:\WC\lib386\dos\clib3r.lib(fprtf)
+0001:0000702c  __fprtf_
+Module: C:\WC\lib386\dos\clib3r.lib(memalloc)
+0001:000070b2  __MemAllocator
+0001:0000715a  __MemFree
+Module: C:\WC\lib386\dos\clib3r.lib(grownear)
+0001:000072a4+ __FreeDPMIBlocks_
+0001:00007302* __ReAllocDPMIBlock_
+0001:00007479+ __LastFree_
+0001:00007649  __ExpandDGROUP_
+Module: C:\WC\lib386\dos\clib3r.lib(nmemneed)
+0001:00007804  __nmemneed_
+Module: C:\WC\lib386\dos\clib3r.lib(heapmod)
+0002:000026dc* ___fheap_clean
+0002:000026dd  ___nheap_clean
+Module: C:\WC\lib386\dos\clib3r.lib(prtf)
+0001:00007807  __prtf_
+Module: C:\WC\lib386\dos\clib3r.lib(cmain386)
+0001:00008201  __CMain
+Module: C:\WC\lib386\dos\clib3r.lib(inirt386)
+0001:00008250  __InitRtns
+0001:0000829b  __FiniRtns
+Module: C:\WC\lib386\dos\clib3r.lib(seg386)
+0000:00001234  __DOSseg__
+Module: C:\WC\lib386\dos\clib3r.lib(crwd386)
+0002:000015bc  __psp
+0002:000015e7  __osmajor
+0002:000015e8  __osminor
+0002:000015de  __Extender
+0002:000015df  __ExtenderSubtype
+0002:000015e0  __X32VM
+0002:000015c0* __x386_stacklow
+0002:000015b4  __LpCmdLine
+0002:000015b8  __LpPgmName
+0002:000015ac  __dynend
+0002:000015b0  __curbrk
+0002:000015c0  __STACKLOW
+0002:000015c4  __STACKTOP
+0002:000015c8  __ASTACKSIZ
+0002:000015cc  __ASTACKPTR
+0002:000015d0  __cbyte
+0002:000015d4* __cbyte2
+0002:000015d8  __child
+0002:000015e1  __Envptr
+0002:000015e5  __Envseg
+0002:000015dc  __no87
+0002:000015e9  __FPE_handler
+0002:000015e9  ___FPE_handler
+Module: C:\WC\lib386\dos\clib3r.lib(initargv)
+0001:000082eb  __Init_Argv_
+Module: C:\WC\lib386\dos\clib3r.lib(umaskval)
+0002:000015f0  ___umaskval
+Module: C:\WC\lib386\dos\clib3r.lib(isatt)
+0001:00008491  isatty_
+Module: C:\WC\lib386\dos\clib3r.lib(seterrno)
+0001:000084af* __set_EDOM_
+0001:000084b4  __set_errno_
+0001:000084c0* __set_ERANGE_
+0001:000084c7* __set_EINVAL_
+0001:000084d7  __set_doserrno_
+0001:000084e3* __FPE_exception_
+Module: C:\WC\lib386\dos\clib3r.lib(dosret)
+0001:000084ea* _dosret0_
+0001:000084f1* _dosretax_
+0001:000084f6  __set_errno_dos_
+Module: C:\WC\lib386\dos\clib3r.lib(iomode)
+0001:0000855c  __IOMode_
+0001:000085b1  __SetIOMode_
+0002:00001608+ ___NFiles
+0002:0000160c+ ___init_mode
+0002:0000165c+ __iomode
+Module: C:\WC\lib386\dos\clib3r.lib(tolower)
+0001:000085c6  tolower_
+0001:000085c6* _tolower_
+Module: C:\WC\lib386\dos\clib3r.lib(allocfp)
+0001:000085d4  __allocfp_
+0001:0000867c  __freefp_
+0001:000086b5  __purgefp_
+Module: C:\WC\lib386\dos\clib3r.lib(chktty)
+0001:000086d3  __chktty_
+Module: C:\WC\lib386\dos\clib3r.lib(stinit)
+0002:000026e0  ___OpenStreams
+Module: C:\WC\lib386\dos\clib3r.lib(lseek)
+0001:00008704  lseek_
+0001:00008704* _lseek_
+Module: C:\WC\lib386\dos\clib3r.lib(stack386)
+0001:00008745  stackavail_
+Module: C:\WC\lib386\dos\clib3r.lib(stk386)
+0001:00008769* __STK
+0001:00008756* __CHK
+0001:00008766* __GRO
+0001:00008787  __STKOVERFLOW_
+Module: C:\WC\lib386\dos\clib3r.lib(ioalloc)
+0001:00008796  __ioalloc_
+Module: C:\WC\lib386\dos\clib3r.lib(qread)
+0001:0000880d  __qread_
+Module: C:\WC\lib386\dos\clib3r.lib(fgetc)
+0001:0000882c* fgetc_
+0001:000088b5+ __filbuf_
+0001:000088e4  __fill_buffer_
+Module: C:\WC\lib386\dos\clib3r.lib(tell)
+0001:0000898f  tell_
+Module: C:\WC\lib386\dos\clib3r.lib(flush)
+0001:000089a0  __flush_
+Module: C:\WC\lib386\dos\clib3r.lib(fputc)
+0001:00008a5f  fputc_
+Module: C:\WC\lib386\dos\clib3r.lib(d2ttime)
+0001:00008b03  _d2ttime_
+Module: C:\WC\lib386\dos\clib3r.lib(filelen)
+0001:00008b69  filelength_
+Module: C:\WC\lib386\dos\clib3r.lib(_clse)
+0001:00008ba6  __close_
+Module: C:\WC\lib386\dos\clib3r.lib(gtpid)
+0001:00008bd8  getpid_
+Module: C:\WC\lib386\dos\clib3r.lib(remove)
+0001:00008bde  remove_
+Module: C:\WC\lib386\dos\clib3r.lib(environ)
+0002:00001674  _environ
+0002:00001678  ___env_mask
+Module: C:\WC\lib386\dos\clib3r.lib(strnicmp)
+0001:00008be4  strnicmp_
+Module: C:\WC\lib386\dos\clib3r.lib(scnf)
+0001:00008c3b  __scnf_
+Module: C:\WC\lib386\dos\clib3r.lib(intxa386)
+0001:00009786  __int386x_
+0001:000097e3* _DoINTR_
+Module: C:\WC\lib386\dos\clib3r.lib(minreal)
+0002:000026e4  ___minreal
+Module: C:\WC\lib386\dos\clib3r.lib(heapen)
+0001:00009b64* _heapenable_
+0002:0000167c  ___heap_enabled
+Module: C:\WC\lib386\dos\clib3r.lib(sbrk386)
+0001:00009b74* sbrk_
+0001:00009c33  __brk_
+Module: C:\WC\lib386\dos\clib3r.lib(amblksiz)
+0002:00001680  __amblksiz
+Module: C:\WC\lib386\dos\clib3r.lib(noefgfmt)
+0002:00001684  ___EFG_printf
+0002:00001688  ___EFG_scanf
+Module: C:\WC\lib386\dos\clib3r.lib(ltoa)
+0001:00009d2c  ultoa_
+0001:00009d75  ltoa_
+0001:00009d75* _ltoa_
+Module: C:\WC\lib386\dos\clib3r.lib(toupper)
+0001:00009d90  toupper_
+0001:00009d90* _toupper_
+Module: C:\WC\lib386\dos\clib3r.lib(cinit)
+0001:00009d9e  __CommonInit_
+Module: C:\WC\lib386\dos\clib3r.lib(___argc)
+0002:000026e8  ____Argc
+0002:000026ec  ____Argv
+Module: C:\WC\lib386\dos\clib3r.lib(initfile)
+0001:00009da9  __InitFiles_
+Module: C:\WC\lib386\dos\clib3r.lib(ioexit)
+0001:00009e21  __full_io_exit_
+0001:00009e2d* fcloseall_
+Module: C:\WC\lib386\dos\clib3r.lib(xmsg)
+0001:00009e84* __exit_with_msg_
+0001:00009e89  __fatal_runtime_error_
+Module: C:\WC\lib386\dos\clib3r.lib(flushall)
+0001:00009ea6* flushall_
+0001:00009eab  __flushall_
+Module: C:\WC\lib386\dos\clib3r.lib(gtche)
+0001:00009eda  getche_
+Module: C:\WC\lib386\dos\clib3r.lib(qwrit)
+0001:00009ef7  __qwrite_
+Module: C:\WC\lib386\dos\clib3r.lib(mktime)
+0001:00009f73  mktime_
+Module: C:\WC\lib386\dos\clib3r.lib(unlnk)
+0001:0000a0c7  unlink_
+Module: C:\WC\lib386\dos\clib3r.lib(setenvp)
+0001:0000a0e6  __setenvp_
+Module: C:\WC\lib386\dos\clib3r.lib(istable)
+0002:00000ba4  __IsTable
+Module: C:\WC\lib386\dos\clib3r.lib(fdfs386)
+0001:0000a1ba  __FDFS
+Module: C:\WC\lib386\dos\clib3r.lib(enterdb)
+0001:0000a206  __EnterWVIDEO_
+0002:0000168c+ ___WD_Present
+Module: C:\WC\lib386\dos\clib3r.lib(timeutil)
+0001:0000a22c  __leapyear_
+0001:0000a374  __isindst_
+0002:00000ca8  ___diyr
+0002:00000cc2  ___dilyr
+Module: C:\WC\lib386\dos\clib3r.lib(gmtime)
+0001:0000a657  __brktime_
+0001:0000a76c+ _gmtime_
+0001:0000a788* gmtime_
+Module: C:\WC\lib386\dos\clib3r.lib(tzset)
+0002:00001690  ___start_dst
+0002:000016b4  ___end_dst
+0002:000016d8  _timezone
+0002:000016dc  ___dst_adjust
+0002:000016e0+ _daylight
+0001:0000a795* tryOSTimeZone_
+0001:0000a796  tzset_
+0001:0000a9d7+ __parse_tz_
+0002:00001722  _tzname
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+C:\WC\lib386\dos\clib3r.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  1000 (4096.)
+Memory size:  e186 (57734.)
+Entry point address: 0001:00005ab0

@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <types.h>
+#include <dos.h>
+#include <i86.h>
+#include <math.h>
+#include "wicked.h"
+#include "kbd.h"
+
+
+//===============================================================================
+
+
+/*
+==============
+main
+==============
+*/
+void main(int argc, char **argv)
+{
+  char          IsPoland;
+
+//-------------------------------------------------------------------------------
+// here starts our code
+//-------------------------------------------------------------------------------
+  argc--;
+  argv++;
+
+  printf("%s", WBanner);                /* show da banner */
+  if (!argc)
+  {
+    printf("Usage: WICKED.EXE <module2play> <--- MOD or S3M\n");
+    exit(1);
+  }
+
+
+
+  strupr(argv[0]);
+
+  UsedLdr = &Load_S3M;
+  while (UsedLdr)
+  {
+    if (!UsedLdr->Identify(argv[0]))
+      UsedLdr= UsedLdr->Next;
+    else
+      break;
+  }
+
+  if (!UsedLdr)
+    shutUp("Sorry, This Format Is Not Supported By Any Of Loaders!");
+
+  UsedDrv = &DrvGUS;
+
+  if (!UsedDrv->Init())                 /* init loaders'n'drivers    */
+    shutUp("Cannot Initialize Sound Driver!");
+  printf("þ %s\n", UsedDrv->Name);
+  printf("þ %s\n", UsedLdr->Name);
+  printf("%s found at 0x%X with %dk of memory.\n",
+    UsedDrv->DeviceName, UsedDrv->DeviceBase, (UsedDrv->DeviceMem >> 10)+1);
+
+  /* load module */
+  printf("Loading module. Please wait...\n");
+  UsedLdr->Load(argv[0]);
+  addShutUp(UsedLdr->Cleanup);
+
+  /* set initial values */
+  MP_SetGlobalVol(64);
+  MP_SetStereo(0);
+  IsPoland = LDR_Search4Poland();
+  MP_PlayMod();
+  getch();
+  MP_StopMod();
+  UsedLdr->Cleanup();
+  vmode(3);
+  printf("--- please DO NOT spread it away. this is only beta version ---\n");
+}
